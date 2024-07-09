@@ -1,0 +1,23 @@
+button{
+    position:fixed;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding:5px;
+    background-color: #e6e6e6;
+    border: solid rgb(0, 151, 151) 4px ;
+    border-radius: 30%;
+    color: rgb(0, 151, 151);
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    
+}
+
+button:hover{
+    background-color:rgb(0, 151, 151);
+    border: solid #e6e6e6 3px ;
+    color: #e6e6e6;
+}
