@@ -1,0 +1,13 @@
+const defaultTodos = [
+  {text:'cortar cebolla',completed:false},
+  {text:'tomar curso de react',completed:true},
+  {text:'tomar curso manipulacion de arrays',completed:false},
+  {text:'completar cuurso 2 de react',completed:true},
+  {text:'completar cuurso 2 de react2',completed:true},
+];
+
+* localStorage.setItem('TODOS_v1', defaultTodos) -> set item agrega a localstorage y recibe 2 parametros
+    1 TODOS_v1 -> el nombre de como se va a guardar
+    2 defaultTodos -> lo que se va a guardar
+        
+        **LOCALSTORAGE guarda toso como un string
