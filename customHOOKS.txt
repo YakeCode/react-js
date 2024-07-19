@@ -1,0 +1,1 @@
+abstraer la logica aparte -> la convencion utiliza que al iniciar se comience con use(seguido del nombre de la funcion) o en otras opalabras del componente logico usable

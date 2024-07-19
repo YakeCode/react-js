@@ -5,7 +5,7 @@ import { TodoItem } from './components/TodoItem';
 import { TodoSearch } from './components/TodoSearch';
 import { TodoList } from './components/TodoList';
 import { CreateTodoButton } from './components/CreateTodoButton';
-import react from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 /*const defaultTodos = [
   {text:'cortar cebolla',completed:false},
@@ -18,66 +18,6 @@ import react from 'react';
 localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))*/
 //localStorage.removeItem('TODOS_v1')
 
-
-
-/*function useLocalStorage(itemName,initialValue){
-
-  const localStorageItem = localStorage.getItem(itemName); // crea para guiardar en TODOS_V1
-
-  let parsedItem;
-  
-  if (!localStorage){
-    const localStorageNotUsed = JSON.stringify (initialValue)
-    localStorage.setItem(itemName, localStorageNotUsed) 
-    parsedItem = initialValue
-  } else {
-    parsedItem  = JSON.parse(localStorageTodos)
-  }
-
-    const [item, setItem] =React.useState ()
-    
-    // ACTUALIZAR EL ESTADO Y EL LOCALSTORAGE
-
-  const saveItem = (newItem) =>  {
-    localStorage.setItem(itemName, JSON.stringify(newItem))
-    setItem(newItem)
-  };
-
-  return [item, saveItem]
-
-}*/
-
-// _________ Custom Hooks___________
-
-function useLocalStorage(itemName,initialValue){
-
-// localStorage init___________________
-
-  const localStorageItem = localStorage.getItem(itemName);
-
-  let parsedItem;
-
-  if(!localStorageItem){
-    localStorage.setItem(itemName,JSON.stringify(initialValue));
-    parsedItem=initialValue;
-  }else{
-    parsedItem=JSON.parse(localStorageItem);
-  }
-
-// localStorage END ________________________
-
-  const [item,setItem]=React.useState(parsedItem);
-
-// ACTUALIZAR EL ESTADO Y EL LOCALSTORAGE
-
-  const saveItem=(newItem)=>{
-    localStorage.setItem(itemName,JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return[item,saveItem];
-
-};
 
 function App() {
 
