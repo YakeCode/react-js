@@ -1,0 +1,3 @@
+este carga el codigo al cargar la pagina y ya luego no carga¡a hasta que se cumpla una condicion
+
+y no se ejecuta en orden, se ejecuta al final

@@ -2,25 +2,51 @@ import React from "react";
 
 // _________ Custom Hooks___________
 
-function useLocalStorage(itemName,initialValue){
+function useLocalStorage(itemName, initialValue){
 
-// localStorage init___________________
-    
-    const localStorageItem = localStorage.getItem(itemName);
-    
-    let parsedItem;
-    
-    if(!localStorageItem){
-        localStorage.setItem(itemName,JSON.stringify(initialValue));
-        parsedItem=initialValue;
-    }else{
-        parsedItem=JSON.parse(localStorageItem);
-    }
-    
-    // localStorage END ________________________
-    
-    const [item,setItem]=React.useState(parsedItem);
-    
+    const [item,setItem]=React.useState(initialValue);
+
+    const [loading, setLoading] = React.useState(true);
+
+    const [error, setError] = React.useState(false);
+
+
+    React.useEffect(()=>{
+
+        setTimeout (()=>{
+            try {
+
+                // localStorage init___________________
+            
+                const localStorageItem = localStorage.getItem(itemName);
+            
+                let parsedItem;
+        
+                if(!localStorageItem){
+                    localStorage.setItem(itemName,JSON.stringify(initialValue));
+                    parsedItem = initialValue;
+                }else{
+                    parsedItem = JSON.parse(localStorageItem);
+                    setItem(parsedItem)
+                }
+        
+                if(!localStorageItem){
+                    localStorage.setItem(itemName,JSON.stringify(initialValue));
+                    parsedItem=initialValue;
+                }else{
+                    parsedItem = JSON.parse(localStorageItem);
+                }
+            // localStorage END ________________________
+        
+            setLoading(false)
+        
+            } catch (error) {
+                setLoading(false)
+                setError(true)
+            }
+        },2000);
+    }, [])
+
     // ACTUALIZAR EL ESTADO Y EL LOCALSTORAGE
     
     const saveItem=(newItem)=>{
@@ -28,7 +54,13 @@ function useLocalStorage(itemName,initialValue){
         setItem(newItem);
     };
     
-    return[item,saveItem];
+    return {
+        item,
+        saveItem,
+        loading, 
+        error
+    };
+    
     };
 
     export {useLocalStorage}

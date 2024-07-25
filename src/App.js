@@ -21,7 +21,12 @@ localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))*/
 
 function App() {
 
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  const {
+    item : todos,
+    saveItem : saveTodos, 
+    loading,
+    error
+    } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue,setSearchValue] = React.useState('');// ('') valor inicial del estado
 
@@ -74,6 +79,11 @@ function App() {
       setSearchValue = {setSearchValue}
     />
     <TodoList>
+
+      {loading && <p>estamos cargando</p>}
+      {error && <p>error</p>}
+      {(!loading && searchedTodos.length === 0) && <p>crea tu primer Todo</p>}
+
         {searchedTodos.map(todo => ( // se utiliza la funcion searched todos porque el POR DEFECTO me va a renderizar todos los todos que hayan, pero a la hora de utilkizar el buscador, solo me rendizara los que me generen coincidencias con el buscador
           <TodoItem
             key={`${todo.length}+${todo.text}`}
