@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import {TodoCounter} from './components/TodoCounter'
+import {TodoCounter} from './components/TodoCounter';
 import { TodoItem } from './components/TodoItem';
 import { TodoSearch } from './components/TodoSearch';
 import { TodoList } from './components/TodoList';
 import { CreateTodoButton } from './components/CreateTodoButton';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { TodosLoading } from './components/TodosLoading';
+import { TodosError } from './components/TodosError';
+import { EmptyTodos } from './components/EmptyTodos';
 
 /*const defaultTodos = [
   {text:'cortar cebolla',completed:false},
@@ -80,11 +83,11 @@ function App() {
     />
     <TodoList>
 
-      {loading && <p>estamos cargando</p>}
-      {error && <p>error</p>}
-      {(!loading && searchedTodos.length === 0) && <p>crea tu primer Todo</p>}
+      {loading && <TodosLoading/>}
+      {error && <TodosError/>}
+      {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
 
-        {searchedTodos.map(todo => ( // se utiliza la funcion searched todos porque el POR DEFECTO me va a renderizar todos los todos que hayan, pero a la hora de utilkizar el buscador, solo me rendizara los que me generen coincidencias con el buscador
+        {searchedTodos.map(todo => ( // se utiliza la funcion searched todos porque el POR DEFECTO me va a renderizar todos los todos que hayan, pero a la hora de utilizar el buscador, solo me rendizara los que me generen coincidencias con el buscador
           <TodoItem
             key={`${todo.length}+${todo.text}`}
             text={todo.text}
