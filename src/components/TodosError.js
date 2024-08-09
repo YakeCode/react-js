@@ -2,8 +2,8 @@ import React from 'react'
 
 function TodosError() {
     return (
-        <div>Error</div>
+        <p>Error...</p>
     )
 }
 
-export  {TodosError}
+export  { TodosError }

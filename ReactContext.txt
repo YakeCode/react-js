@@ -1,0 +1,6 @@
+React Context 
+
+es una herramienta que nos permite crear estados globales para evitar un problema de prop drilling
+
+Prop drilling en React es un término que se refiere al proceso de pasar datos desde un componente principal a uno o más componentes hijos, a través de varios niveles intermedios. Este método puede volverse complicado y difícil de manejar cuando hay muchos niveles en la jerarquía de componentes, ya que cada componente intermedio debe pasar las propiedades a los siguientes.
+

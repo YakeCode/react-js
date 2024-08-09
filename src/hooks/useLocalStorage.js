@@ -1,59 +1,61 @@
 import React from "react";
 
-// _________ Custom Hooks___________
+// _________ Custom Hook useLocalStorage ___________
 
-function useLocalStorage(itemName, initialValue){
+/*const defaultTodos = [
+{text:'cortar cebolla',completed:false},
+{text:'tomar curso de react',completed:true},
+{text:'tomar curso manipulacion de arrays',completed:false},
+{text:'completar cuurso 2 de react',completed:true},
+{text:'completar cuurso 2 de react2',completed:true},
+];
 
-    const [item,setItem]=React.useState(initialValue);
+localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))*/
+//localStorage.removeItem('TODOS_v1')
 
+function useLocalStorage(itemName, initialValue) {
+    const [item, setItem] = React.useState(initialValue);
     const [loading, setLoading] = React.useState(true);
-
     const [error, setError] = React.useState(false);
 
-
-    React.useEffect(()=>{
-
-        setTimeout (()=>{
+    React.useEffect(() => {
+        setTimeout(() => {
             try {
-
-                // localStorage init___________________
-            
+          // localStorage init___________________
                 const localStorageItem = localStorage.getItem(itemName);
-            
                 let parsedItem;
-        
-                if(!localStorageItem){
-                    localStorage.setItem(itemName,JSON.stringify(initialValue));
-                    parsedItem = initialValue;
-                }else{
-                    parsedItem = JSON.parse(localStorageItem);
-                    setItem(parsedItem)
-                }
-            // localStorage END ________________________
-        
-            setLoading(false)
-        
-            } catch (error) {
-                setLoading(false)
-                setError(true)
+
+            if (!localStorageItem) {
+                localStorage.setItem(itemName, JSON.stringify(initialValue));
+                parsedItem = initialValue;
+            } else {
+                parsedItem = JSON.parse(localStorageItem);
             }
-        },2000);
-    }, [])
+            setItem(parsedItem);
+            setLoading(false);
+            } catch (error) {
+                setLoading(false);
+                setError(true);
+            }
+        }, 1000);
+    }, [itemName, initialValue]);
 
     // ACTUALIZAR EL ESTADO Y EL LOCALSTORAGE
-    
-    const saveItem=(newItem)=>{
-        localStorage.setItem(itemName,JSON.stringify(newItem));
-        setItem(newItem);
+    const saveItem = (newItem) => {
+        try {
+            localStorage.setItem(itemName, JSON.stringify(newItem));
+            setItem(newItem);
+        }catch (error) {
+            setError(true);
+        }
     };
-    
+
     return {
         item,
         saveItem,
-        loading, 
-        error
+        loading,
+        error,
     };
-    
-    };
+}
 
-    export {useLocalStorage}
+export { useLocalStorage };
