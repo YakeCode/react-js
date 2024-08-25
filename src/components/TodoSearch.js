@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/TodoSearch.css'
+import { TodoContext } from '../context/TodoContext.js'
 
-function TodoSearch({searchValue,setSearchValue}) {
+function TodoSearch() {
 
-    //const [state, setState] = React.useState('');
-    //const[searchValue,setSearchValue] = React.useState(''); // ('') como inicia mi input
+    const {searchValue, setSearchValue, } = React.useContext(TodoContext)
 
     console.log(searchValue)
     

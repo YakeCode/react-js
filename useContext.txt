@@ -1,0 +1,7 @@
+lo utilizamos para enviar popiedades del contexto a el lugar donde las necesitamos
+
+para que estas den se deben encontrar dentro del provider
+
+    const { propiedades } = React.useContext(desde que contexto)
+
+    const { completedTodos, totalTodos,} = React.useContext(TodoContext)
