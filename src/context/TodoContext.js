@@ -13,6 +13,8 @@ function TodoProvider({children}){
       } = useLocalStorage('TODOS_V1', []); // El hook customizado maneja el almacenamiento local
     
       const [searchValue, setSearchValue] = React.useState(''); // Valor inicial del estado
+
+      const [openModal, setOpenModal] = React.useState (false);
     
       //_______________________________________________________________________________
       // Cuantos han sido completados
@@ -44,6 +46,7 @@ function TodoProvider({children}){
             saveTodos(newTodos); // Guardar los cambios en el localStorage
         };
 
+
     return (
         <TodoContext.Provider 
         
@@ -58,6 +61,8 @@ function TodoProvider({children}){
                 searchedTodos,
                 completeTodo,
                 deleteTodo,
+                openModal,
+                setOpenModal
             }
         }>
 
