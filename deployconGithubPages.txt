@@ -1,0 +1,11 @@
+1 npm run build
+
+2 en el package.json -> 
+    poner homepage con la ruta del repositorio en github
+
+    "homepage": "https://github.com/YakeCode/react-js"
+
+3 npm i --save-dev gh-pages
+
+4 escribir un nuevo scrip 
+    "deploy": "gh-pages -d build"
