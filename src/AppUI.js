@@ -10,6 +10,7 @@ import { TodosError } from './components/TodosError';
 import { EmptyTodos } from './components/EmptyTodos';
 import { TodoContext } from './context/TodoContext';
 import { Modal } from './components/Modal/Modal';
+import { TodoForm } from './components/TodoForm/TodoForm';
 
 function AppUI() {
   const {
@@ -48,7 +49,7 @@ function AppUI() {
 
       {openModal && (
         <Modal>
-          aca va  el portal
+          <TodoForm/>
         </Modal>)
       }
 

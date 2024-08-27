@@ -3,7 +3,7 @@ import '../styles/CreateTodoButton.css'
 
 function CreateTodoButton( { setOpenModal}) {
     return (
-    <button
+    <button className = 'primary-button'
         onClick={()=>{
             setOpenModal (state => !state)
         }}

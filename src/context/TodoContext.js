@@ -5,8 +5,6 @@ const TodoContext = React.createContext()
 
 function TodoProvider({children}){
 
-    
-
     const {
         item: todos,
         saveItem: saveTodos,
@@ -48,6 +46,12 @@ function TodoProvider({children}){
             saveTodos(newTodos); // Guardar los cambios en el localStorage
         };
 
+        const addTodo = (text)=>{
+          const newTodos = [...todos];
+          newTodos.push({text, completed:false})
+          saveTodos(newTodos); 
+        }
+
 
     return (
         <TodoContext.Provider 
@@ -65,6 +69,7 @@ function TodoProvider({children}){
                 deleteTodo,
                 openModal,
                 setOpenModal,
+                addTodo,
             }
         }>
 

@@ -1,4 +1,4 @@
-button{
+.primary-button{
     position:fixed;
     right: 35%;
     display: flex;
@@ -13,11 +13,10 @@ button{
     width: 40px;
     height: 40px;
     font-size: 35px;
-    z-index: 1;
     
 }
 
-button:hover{
+.primary-button:hover{
     background-color:rgb(0, 151, 151);
     border: solid #e6e6e6 3px ;
     color: #e6e6e6;

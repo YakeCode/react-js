@@ -1,18 +1,5 @@
 import React from "react";
 
-// _________ Custom Hook useLocalStorage ___________
-
-/*const defaultTodos = [
-{text:'cortar cebolla',completed:false},
-{text:'tomar curso de react',completed:true},
-{text:'tomar curso manipulacion de arrays',completed:false},
-{text:'completar cuurso 2 de react',completed:true},
-{text:'completar cuurso 2 de react2',completed:true},
-];
-
-localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))*/
-//localStorage.removeItem('TODOS_v1')
-
 function useLocalStorage(itemName, initialValue) {
     const [item, setItem] = React.useState(initialValue);
     const [loading, setLoading] = React.useState(true);
