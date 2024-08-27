@@ -5,6 +5,8 @@ const TodoContext = React.createContext()
 
 function TodoProvider({children}){
 
+    
+
     const {
         item: todos,
         saveItem: saveTodos,
@@ -62,7 +64,7 @@ function TodoProvider({children}){
                 completeTodo,
                 deleteTodo,
                 openModal,
-                setOpenModal
+                setOpenModal,
             }
         }>
 

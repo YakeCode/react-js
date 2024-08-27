@@ -1,11 +1,11 @@
 import React from 'react'
 import '../styles/CreateTodoButton.css'
 
-function CreateTodoButton() {
+function CreateTodoButton( { setOpenModal}) {
     return (
     <button
         onClick={()=>{
-            console.log(`diste click a añadir todo button`)
+            setOpenModal (state => !state)
         }}
     >+</button>
     )
