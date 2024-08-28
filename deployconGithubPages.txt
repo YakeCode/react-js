@@ -8,4 +8,7 @@
 3 npm i --save-dev gh-pages
 
 4 escribir un nuevo scrip 
+        "predeploy": "npm run build ",
+
+5 escribir un nuevo scrip 
     "deploy": "gh-pages -d build"
