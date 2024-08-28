@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/YakeCode/react-js/static/css/main.7c91a865.css",
-    "main.js": "/YakeCode/react-js/static/js/main.5c27405d.js",
-    "static/media/Delete.svg": "/YakeCode/react-js/static/media/Delete.ffede8c3f67f444e171b9b3ea432c17d.svg",
-    "index.html": "/YakeCode/react-js/index.html",
-    "static/media/check.svg": "/YakeCode/react-js/static/media/check.1cd1a8cfeb3e57068028ed449d41d236.svg",
-    "main.7c91a865.css.map": "/YakeCode/react-js/static/css/main.7c91a865.css.map",
-    "main.5c27405d.js.map": "/YakeCode/react-js/static/js/main.5c27405d.js.map"
+    "main.css": "/react-js/static/css/main.7c91a865.css",
+    "main.js": "/react-js/static/js/main.3d45c532.js",
+    "static/media/Delete.svg": "/react-js/static/media/Delete.ffede8c3f67f444e171b9b3ea432c17d.svg",
+    "index.html": "/react-js/index.html",
+    "static/media/check.svg": "/react-js/static/media/check.1cd1a8cfeb3e57068028ed449d41d236.svg",
+    "main.7c91a865.css.map": "/react-js/static/css/main.7c91a865.css.map",
+    "main.3d45c532.js.map": "/react-js/static/js/main.3d45c532.js.map"
   },
   "entrypoints": [
     "static/css/main.7c91a865.css",
-    "static/js/main.5c27405d.js"
+    "static/js/main.3d45c532.js"
   ]
 }
