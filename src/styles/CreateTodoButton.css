@@ -1,11 +1,12 @@
-.primary-button{
-    position:fixed;
+/*.primary-button{
+    /*position:fixed;
     right: 35%;
+    padding:5px;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-items: center;
-    padding:5px;
+    display: inline-block;
     background-color: #e6e6e6;
     border: solid rgb(0, 151, 151) 4px ;
     border-radius: 30%;
@@ -14,7 +15,23 @@
     height: 40px;
     font-size: 35px;
     
+
 }
+*/
+
+.primary-button {
+    display: inline-block; /* Asegura que el botón tenga un tamaño adecuado */
+    background-color: #e6e6e6;
+    border: solid rgb(0, 151, 151) 4px;
+    border-radius: 30%;
+    color: rgb(0, 151, 151);
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    text-align: center; /* Centra el texto horizontalmente */
+    line-height: 50%; /* Igual al valor de height para centrar verticalmente */
+}
+
 
 .primary-button:hover{
     background-color:rgb(0, 151, 151);

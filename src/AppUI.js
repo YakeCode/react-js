@@ -27,7 +27,13 @@ function AppUI() {
     <React.Fragment>
 
       <TodoCounter />
-      <TodoSearch />
+      <div>
+        <TodoSearch />
+        <CreateTodoButton 
+          setOpenModal = {setOpenModal}
+        />
+      </div>
+      
       <TodoList>
         {loading && <TodosLoading />}
         {error && <TodosError />}
@@ -43,9 +49,7 @@ function AppUI() {
           ))
         }
       </TodoList>
-      <CreateTodoButton 
-        setOpenModal = {setOpenModal}
-      />
+      
 
       {openModal && (
         <Modal>
